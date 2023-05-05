@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    username: cricket
+    password: cricket
+    url: jdbc:mysql://localhost:3306/nwacricket
+  
+logging:
+  level:
+    root: warn
+    '[com.promineotech]': debug
+  
+    
+    
