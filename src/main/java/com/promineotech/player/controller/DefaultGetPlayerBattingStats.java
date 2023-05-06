@@ -18,12 +18,12 @@ public class DefaultGetPlayerBattingStats implements GetPlayerBattingStats {
 	@Autowired
 	private GetPlayerBattingStatsService playerBattingstats;
 	@Override
-	public List<PlayerBattingStats> getPlayerBattingStats(int player_id) {
+	public List<PlayerBattingStats> getPlayerBattingStats(String Playername) {
 		// TODO Auto-generated method stub
 		
-		log.info("DefaultGetPlayerBattingStats Controller player_id - {}",player_id);
+		log.info("DefaultGetPlayerBattingStats Controller player_id - {}",Playername);
 		
-		List<PlayerBattingStats> ply= playerBattingstats.getPlayerBattingStatsService(player_id);
+		List<PlayerBattingStats> ply= playerBattingstats.getPlayerBattingStatsService(Playername);
 		log.info("MMM - ply - {}",ply);
 		return ply;
 	}

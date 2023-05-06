@@ -6,6 +6,6 @@ import com.promineotech.player.entity.PlayerBowlingStats;
 
 public interface GetBowlingStatsDao {
 
-	List<PlayerBowlingStats> getBowlingStats(int player_id);
+	List<PlayerBowlingStats> getBowlingStats(String Playername);
 
 }

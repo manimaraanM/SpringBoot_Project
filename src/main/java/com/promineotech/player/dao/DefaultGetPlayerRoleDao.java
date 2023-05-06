@@ -18,16 +18,16 @@ public class DefaultGetPlayerRoleDao implements GetPlayerRoleDao {
 @Autowired
 private NamedParameterJdbcTemplate jdbcTemplate;
 	@Override
-	public List<Players> getPlayerRoleDetailsDao(int role_id) {
+	public List<Players> getPlayerRoleDetailsDao(String role_name) {
 		// TODO Auto-generated method stub
-		String query = " Select p.* from players p, player_role pr "
-				+  " where p.player_id= pr.player_id "
-				+ " and pr.role_id = :pr.role_id ";
-		
+		String query = " Select p.* from players p, player_role pr,roles r "
+				+  " where r.role_name = :r.role_name"
+				+ " and r.role_id =pr.role_id "
+				+ " and p.player_id= pr.player_id ";
 	
 	Map<String,Object> params=new HashMap<>();
 	
-	params.put("pr.role_id", role_id);
+	params.put("r.role_name", role_name);
 	
 	
 	return jdbcTemplate.query(query, params, 

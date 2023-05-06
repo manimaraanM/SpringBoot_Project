@@ -24,19 +24,19 @@ public class DefaultGetPlayerBattingStatsService implements GetPlayerBattingStat
 	@Transactional(readOnly=true)
 
 	@Override
-	public List<PlayerBattingStats> getPlayerBattingStatsService(int player_id) {
+	public List<PlayerBattingStats> getPlayerBattingStatsService(String Playername) {
 		// TODO Auto-generated method stub
-		log.info("defaultGetPlayerBattingStatsService - {}",player_id);
-		List<PlayerBattingStats> ply= getBattingStatsDao.getBattingStats(player_id);
-		log.info("MMM -{}",ply);
-		if(ply.isEmpty()) {
-			String msg=String.format("Provided role_id %d is invalid", ply);
+		log.info("defaultGetPlayerBattingStatsService - {}",Playername);
+		List<PlayerBattingStats> players= getBattingStatsDao.getBattingStats(Playername);
+		log.info("MMM -{}",players);
+		if(players.isEmpty()) {
+			String msg=String.format("Provided player %s name is invalid", Playername);
 			throw new NoSuchElementException(msg);
 			
 		}
 		
 		
-		return ply;
+		return players;
 	}
 
 }

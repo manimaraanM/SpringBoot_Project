@@ -12,14 +12,19 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import com.promineotech.player.entity.PlayerBattingStats;
 import com.promineotech.player.entity.Players;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.servers.Server;
 
 @RequestMapping("/players/battingstats")
 @Validated
+@OpenAPIDefinition(info = @Info(title="Player Batting Details Service"), servers = {
+		@Server(url = "http://localhost:8080",description = "local server")})
 public interface GetPlayerBattingStats {
 	//@formatter:off
 		@Operation(
@@ -52,10 +57,10 @@ public interface GetPlayerBattingStats {
 				},
 				parameters = {
 						@Parameter(
-								name = "player_id",
+								name = "Playername",
 								allowEmptyValue = false, 
 								required=false, 
-								description = "Player id like 1/2")
+								description = "Playername like Sachin")
 						
 				}
 
@@ -64,6 +69,6 @@ public interface GetPlayerBattingStats {
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	List<PlayerBattingStats> getPlayerBattingStats(@RequestParam 
-			int player_id);
+			 String Playername);
 	
 }

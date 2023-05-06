@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 @RequestMapping("/players/bowlingstats")
 @Validated
-public interface GetPlayerBolwingStats {
+public interface GetPlayerBowlingStats {
 	//@formatter:off
 			@Operation(
 					summary = "Service to get Player Bowling Stats",
@@ -52,10 +52,10 @@ public interface GetPlayerBolwingStats {
 					},
 					parameters = {
 							@Parameter(
-									name = "player_id",
+									name = "Playername",
 									allowEmptyValue = false, 
 									required=false, 
-									description = "Player id like 1/2")
+									description = "Player name")
 							
 					}
 
@@ -63,5 +63,5 @@ public interface GetPlayerBolwingStats {
 			//@formatter:on
 @GetMapping
 @ResponseStatus(HttpStatus.OK)
-	List<PlayerBowlingStats> getPlayerBowlingStats(@RequestParam int player_id);
+	List<PlayerBowlingStats> getPlayerBowlingStats(@RequestParam String Playername);
 }

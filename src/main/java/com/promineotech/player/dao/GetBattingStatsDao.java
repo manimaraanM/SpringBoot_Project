@@ -6,6 +6,6 @@ import com.promineotech.player.entity.PlayerBattingStats;
 
 public interface GetBattingStatsDao {
 
-	List<PlayerBattingStats> getBattingStats(int player_id);
+	List<PlayerBattingStats> getBattingStats(String Playername);
 
 }

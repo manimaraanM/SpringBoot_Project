@@ -18,15 +18,18 @@ public class DefaultGetBowlingStatsDao implements GetBowlingStatsDao {
 @Autowired
 private NamedParameterJdbcTemplate jdbcTemplate;
 	@Override
-	public List<PlayerBowlingStats> getBowlingStats(int player_id) {
+	public List<PlayerBowlingStats> getBowlingStats(String Playername) {
 		// TODO Auto-generated method stub
 		
-		String query = " Select * from player_bowling_stats "
-			     + " where player_id=:player_id";
+	
+		String query = " Select pb.* from player_bowling_stats pb, players p "
+			     + " where p.player_name=:p.player_name"
+			     + " and pb.player_id = p.player_id";
+		
 		
 		Map<String,Object> params=new HashMap<>();
 		
-		params.put("player_id", player_id);
+		params.put("p.player_name", Playername);
 		
 		return jdbcTemplate.query(query, params, new RowMapper<>() {
 

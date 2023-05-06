@@ -15,11 +15,11 @@ public class DefaultGetPlayerRoleService implements GetPlayerRoleService {
 	@Autowired
 	private GetPlayerRoleDao getPlayerRole;
 	@Override
-	public List<Players> getPlayerRoleDetailsService(int role_id) {
+	public List<Players> getPlayerRoleDetailsService(String role_name) {
 		// TODO Auto-generated method stub
-		List<Players> players=getPlayerRole.getPlayerRoleDetailsDao(role_id);
+		List<Players> players=getPlayerRole.getPlayerRoleDetailsDao(role_name);
 		if(players.isEmpty()) {
-			String msg=String.format("Provided role_id %d is invalid", role_id);
+			String msg=String.format("Provided role_id %d is invalid", role_name);
 			throw new NoSuchElementException(msg);
 			
 		}

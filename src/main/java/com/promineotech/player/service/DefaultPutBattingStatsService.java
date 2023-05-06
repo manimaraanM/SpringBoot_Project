@@ -13,10 +13,11 @@ import lombok.extern.slf4j.Slf4j;
 public class DefaultPutBattingStatsService implements PutBattingStatsService {
 @Autowired
 private PutPlayerBattingStatsDao playerbattingdao;
+
 	@Override
-	public PlayerBattingStats updatePlayerBattingDetailsService(int player_id, int matches, long total_runs) {
+	public PlayerBattingStats updatePlayerBattingDetailsService(PlayerBattingStats players) {
 		// TODO Auto-generated method stub
-		return playerbattingdao.updatePlayerBattingDetailsDao(player_id,  matches,  total_runs);
+		return playerbattingdao.updatePlayerBattingDetailsDao(players);
 	}
 
 }

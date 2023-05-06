@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.promineotech.player.controller.GetPlayerBolwingStats;
+import com.promineotech.player.controller.GetPlayerBowlingStats;
 import com.promineotech.player.dao.GetBowlingStatsDao;
 import com.promineotech.player.entity.PlayerBattingStats;
 import com.promineotech.player.entity.PlayerBowlingStats;
@@ -17,17 +17,18 @@ public class defaultGetPlayerBowlingStatsService implements GetPlayerBowlingStat
 private GetBowlingStatsDao getBowlingStatsDao;
 	
 	@Override
-	public List<PlayerBowlingStats> getBowlingStatsService(int player_id) {
+	public List<PlayerBowlingStats> getBowlingStatsService(String Playername) {
 		// TODO Auto-generated method stub
-		List<PlayerBowlingStats> ply= getBowlingStatsDao.getBowlingStats(player_id);
+		List<PlayerBowlingStats> players= getBowlingStatsDao.getBowlingStats(Playername);
 		//log.info("MMM -{}",ply);
-		if(ply.isEmpty()) {
-			String msg=String.format("Provided role_id %d is invalid", ply);
+		if(players.isEmpty()) {
+			String msg=String.format("Provided player %s name is invalid", Playername);
 			throw new NoSuchElementException(msg);
 			
 		}
 		
-		return ply;
+		
+		return players;
 	}
 
 }

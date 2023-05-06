@@ -1,15 +1,13 @@
 package com.promineotech.player.controller;
 
-
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.promineotech.player.entity.PlayerBowlingStats;
-import com.promineotech.player.entity.Players;
+import com.promineotech.player.entity.PlayerRole;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -17,13 +15,13 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
-@RequestMapping("/createPlayerBowling")
+@RequestMapping("/createplayerrole")
 @Validated
-public interface PostPlayerBowlingStats {
+public interface PostPlayerRole {
 	//@formatter:off
 	@Operation(
-			summary = "Service to create Player Bowling Stats",
-			description = "Service to create Player Bowling Stats",
+			summary = "Service to create Player Role mapping ",
+			description = "Service to create Player mapping ",
 			responses = {
 					@ApiResponse(
 							responseCode = "201",
@@ -49,11 +47,11 @@ public interface PostPlayerBowlingStats {
 							content = @Content(
 							mediaType = "application/json "))
 			}
-			
 
 			)
 	//@formatter:on
-	@PostMapping
+	@PostMapping()
 	@ResponseStatus(code=HttpStatus.CREATED)
-	PlayerBowlingStats createPlayerBowlerDetails(@RequestBody PlayerBowlingStats players);
+	PlayerRole createPlayerRoles(PlayerRole player_roles);
+
 }

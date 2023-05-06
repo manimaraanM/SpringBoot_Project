@@ -15,7 +15,7 @@ import com.promineotech.player.entity.PlayerBattingStats;
 public interface PutBattingStats {
 
 	@PutMapping
-	@ResponseStatus(code=HttpStatus.OK)
-	PlayerBattingStats updatePlayerBattingDetails(@RequestParam int player_id,int matches,long total_runs);
+	@ResponseStatus(code=HttpStatus.ACCEPTED)
+	PlayerBattingStats updatePlayerBattingDetails(@RequestBody PlayerBattingStats players);
 	
 }

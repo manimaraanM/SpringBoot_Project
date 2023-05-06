@@ -24,22 +24,14 @@ public class DefaultPostBowlingStatsDao implements PostBowlingStatsDao {
 		// TODO Auto-generated method stub
 		
 		log.info("Dao layer - {}", players);
-		KeyHolder keyHolder = new GeneratedKeyHolder();
+		
 		SqlParams params = insertStatementforPlayers(players);
-		jdbcTemplate.update(params.sql, params.source,keyHolder);
+		jdbcTemplate.update(params.sql, params.source);
 		
-		log.info("MMM");
-		
-		log.info("MMM 1 {}",keyHolder.getKey());
-		jdbcTemplate.update(params.sql, params.source,keyHolder);
-		log.info("MMM 2");
-		//int player_id = keyHolder.getKey().intValue();
-	//	int player_id = keyHolder.getKey().intValue();
-	//log.info("MMM  3 player_id {}",keyHolder.getKey().intValue());
-		
+	
 		
 		return players.builder()
-				.player_id(5)
+				.player_id(players.getPlayer_id())
 				.matches(players.getMatches())
 				.total_wickets(players.getTotal_wickets())
 				.best_bowling(players.getBest_bowling())

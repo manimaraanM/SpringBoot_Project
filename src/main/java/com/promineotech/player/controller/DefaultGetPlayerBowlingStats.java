@@ -9,13 +9,13 @@ import com.promineotech.player.entity.PlayerBowlingStats;
 import com.promineotech.player.service.GetPlayerBowlingStatsService;
 
 @RestController
-public class DefaultGetPlayerBowlingStats implements GetPlayerBolwingStats {
+public class DefaultGetPlayerBowlingStats implements GetPlayerBowlingStats {
 @Autowired
 private GetPlayerBowlingStatsService getPlayerBowlingStatsService;
 	@Override
-	public List<PlayerBowlingStats> getPlayerBowlingStats(int player_id) {
+	public List<PlayerBowlingStats> getPlayerBowlingStats(String Playername) {
 		// TODO Auto-generated method stub
-		return getPlayerBowlingStatsService.getBowlingStatsService(player_id);
+		return getPlayerBowlingStatsService.getBowlingStatsService(Playername);
 	}
 
 }

@@ -6,6 +6,6 @@ import com.promineotech.player.entity.Players;
 
 public interface GetPlayerRoleService {
 
-	List<Players> getPlayerRoleDetailsService(int role_id);
+	List<Players> getPlayerRoleDetailsService(String role_name);
 
 }

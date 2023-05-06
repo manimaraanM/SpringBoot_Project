@@ -22,17 +22,20 @@ public class DefaultGetBatStatsDao implements GetBattingStatsDao {
 @Autowired
 private NamedParameterJdbcTemplate jdbcTemplate;
 	@Override
-	public List<PlayerBattingStats> getBattingStats(int player_id) {
+	public List<PlayerBattingStats> getBattingStats(String Playername) {
 		
 		
-		log.info("DefaultGetBatStatsDao - {}",player_id );
+		log.info("DefaultGetBatStatsDao - {}",Playername );
 		// TODO Auto-generated method stub
-		String query = " Select * from PlayerBattingStats "
-				     + " where player_id=:player_id";
+		String query = " Select pb.* from PlayerBattingStats pb, players p "
+				     + " where p.player_name=:p.player_name"
+				     + " and pb.player_id = p.player_id";
+				   
 	
 	Map<String,Object> params=new HashMap<>();
 	
-	params.put("player_id", player_id);
+	
+	params.put("p.player_name", Playername);
 	
 	log.info("DefaultGetBatStatsDao - {} - {} ",query,params);
 	

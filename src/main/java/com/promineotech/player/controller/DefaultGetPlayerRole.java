@@ -14,9 +14,9 @@ public class DefaultGetPlayerRole implements GetPlayerRole {
 	@Autowired
 	private GetPlayerRoleService getPlayerrole;
 	@Override
-	public List<Players> getPlayerRoleDetails(int role_id) {
+	public List<Players> getPlayerRoleDetails(String role_name) {
 		// TODO Auto-generated method stub
-		return getPlayerrole.getPlayerRoleDetailsService(role_id);
+		return getPlayerrole.getPlayerRoleDetailsService(role_name);
 	}
 
 }

@@ -6,6 +6,6 @@ import com.promineotech.player.entity.PlayerBowlingStats;
 
 public interface GetPlayerBowlingStatsService {
 
-	List<PlayerBowlingStats> getBowlingStatsService(int player_id);
+	List<PlayerBowlingStats> getBowlingStatsService(String Playername);
 
 }

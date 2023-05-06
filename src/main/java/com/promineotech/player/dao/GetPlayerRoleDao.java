@@ -6,6 +6,6 @@ import com.promineotech.player.entity.Players;
 
 public interface GetPlayerRoleDao {
 
-	List<Players> getPlayerRoleDetailsDao(int role_id);
+	List<Players> getPlayerRoleDetailsDao(String role_name);
 
 }

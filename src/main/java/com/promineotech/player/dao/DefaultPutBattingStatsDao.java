@@ -10,8 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultPutBattingStatsDao implements PutPlayerBattingStatsDao {
 
+
 	@Override
-	public PlayerBattingStats updatePlayerBattingDetailsDao(int player_id, int matches, long total_runs) {
+	public PlayerBattingStats updatePlayerBattingDetailsDao(PlayerBattingStats players) {
 		// TODO Auto-generated method stub
 		return null;
 	}

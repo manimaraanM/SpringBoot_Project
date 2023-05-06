@@ -51,10 +51,10 @@ public interface GetPlayerRole {
 				},
 				parameters = {
 						@Parameter(
-								name = "role_id",
+								name = "role_name",
 								allowEmptyValue = false, 
 								required=false, 
-								description = "Role id like 1/2 corresponding to Batsman/Bowler")
+								description = "Role name like Batsman/Bowler")
 						
 				}
 
@@ -65,7 +65,7 @@ public interface GetPlayerRole {
 	@ResponseStatus(HttpStatus.OK)
 	List<Players> getPlayerRoleDetails(@RequestParam 
 			(required=false) 
-			 int role_id );
+			 String role_name );
 	
 	
 	
