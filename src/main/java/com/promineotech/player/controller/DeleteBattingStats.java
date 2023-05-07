@@ -16,7 +16,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
-@RequestMapping("/deleteplayer")
+@RequestMapping("/deleteplayerbatting")
 @Validated
 public interface DeleteBattingStats {
 	//@formatter:off
@@ -50,14 +50,14 @@ public interface DeleteBattingStats {
 				},
 				parameters = {
 						@Parameter(
-								name = "player_id",
+								name = "player_name",
 								allowEmptyValue = false, 
 								required=false, 
-								description = "player_id")
+								description = "player_name")
 				}	
 				)
 		//@formatter:on
 	@DeleteMapping
 	@ResponseStatus(HttpStatus.OK)
-	void deleteBattingStats(@RequestParam int player_id);
+	void deleteBattingStats(@RequestParam String player_name);
 }

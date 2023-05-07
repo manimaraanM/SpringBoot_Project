@@ -16,17 +16,17 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
-@RequestMapping("/updateBatting")
+@RequestMapping("/updateBowling")
 @Validated
-public interface PutBattingStats {
+public interface PutBowlingStats {
 	//@formatter:off
 		@Operation(
-				summary = "Service to update Player Batting Details",
-				description = "Service to update Player Batting Details",
+				summary = "Service to update Player Bowling Details",
+				description = "Service to update Player Bowling Details",
 				responses = {
 						@ApiResponse(
 								responseCode = "201",
-								description = "Playing batting details updated",
+								description = "Player is updated",
 								content = @Content(
 								mediaType = "application/json", 
 								schema=@Schema(implementation=PlayerBowlingStats.class))
@@ -51,9 +51,9 @@ public interface PutBattingStats {
 
 				)
 		//@formatter:on
-	
+		
 	@PutMapping
 	@ResponseStatus(code=HttpStatus.ACCEPTED)
-	PlayerBattingStats updatePlayerBattingDetails(@RequestBody PlayerBattingStats players);
+	PlayerBowlingStats updatePlayerBowlingDetails(@RequestBody PlayerBowlingStats players);
 	
 }

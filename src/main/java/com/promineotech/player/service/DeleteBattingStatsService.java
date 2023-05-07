@@ -2,6 +2,6 @@ package com.promineotech.player.service;
 
 public interface DeleteBattingStatsService {
 
-	void deletebattingStats(int player_id);
+	void deletebattingStats(String player_name);
 
 }

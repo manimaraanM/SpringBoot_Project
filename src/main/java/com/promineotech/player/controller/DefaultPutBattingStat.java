@@ -14,7 +14,8 @@ private PutBattingStatsService putBattingstats;
 	@Override
 	public PlayerBattingStats updatePlayerBattingDetails(PlayerBattingStats players) {
 		// TODO Auto-generated method stub
-		return putBattingstats.updatePlayerBattingDetailsService(players);
+		return putBattingstats.updatePlayerBattingDetailsService(players.getPlayer_id(),
+				players.getMatches(),players.getTotal_runs(),players.getHighest_score(),players.getFiftys(),players.getHundreds());
 	}
 
 }

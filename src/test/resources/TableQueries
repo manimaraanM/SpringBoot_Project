@@ -1,0 +1,110 @@
+
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Sachin', 'Kings', 34, 'India', '425', 'Rhb', 'Rhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Lara', 'Raiders', 35, 'West Indies', '385', 'Lhb', 'Rhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Waugh', 'Sunrisers', 36, 'Australia', '375', 'Rhb', 'Rhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Peterson', 'Willows', 32, 'England', '325', 'Rhb', 'Rhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Muralidharan', 'Challengers', 38, 'Sri Lanka','310', 'Rhb', 'Rhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Smith', 'Kings', 33, 'South Africa', '380', 'Rhb', 'Rhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Williamson', 'Raiders', 32, 'New Zealand', '390','Rhb', 'Rhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Richards', 'Sunrisers', 37, 'Usa', '240', 'Lhb', 'Lhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Gavaskar', 'Willows', 42, 'India', '400','Rhb', 'Rhb');
+INSERT INTO players(player_name, team_name, age, birth_place, matches, batting_style, bowling_style)
+VALUES('Fleming', 'Challengers', 40, 'New Zealand', '390', 'Lhb', 'Lhb');
+
+
+
+
+INSERT INTO roles (role_name) VALUES('Captain');
+INSERT INTO roles (role_name) VALUES('Vice Captain');
+INSERT INTO roles (role_name) VALUES('Batsman');
+INSERT INTO roles (role_name) VALUES('Bowler');
+INSERT INTO roles (role_name) VALUES('AllRounder');
+INSERT INTO roles (role_name) VALUES('Wicket Keeper');
+
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(1, 1);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(1, 5);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(6, 2);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(6, 2);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(2, 1);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(2, 3);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(7, 2);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(7, 3);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(3, 1);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(3, 3);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(8, 2);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(8, 5);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(4, 2);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(4, 5);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(9, 1);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(9, 3);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(5, 2);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(5, 4);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(10, 1);
+INSERT INTO nwacricket.player_role (player_id, role_id) VALUES(10, 5);
+
+
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(1, 425, 320, '5/18', 4);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(2, 385, 65, '6/19', 1);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(3, 375, 30, '4/18', 0);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(4, 325, 50, '4/10', 0);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(5, 310, 460, '7/24', 10);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(6, 380, 23, '2/24', 0);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(7, 390, 12, '2/19', 0);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(8, 240, 80, '5/18', 2);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(9, 400, 8, '2/30', 0);
+
+INSERT INTO player_bowling_stats (player_id, matches, total_wickets, best_bowling, five_wickets)
+VALUES(10, 390, 36, '2/38', 0);
+
+
+
+INSERT INTO PlayerBattingStats (player_id, matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(1,425, '18000', '200', '80', '50');
+INSERT INTO PlayerBattingStats (player_id, matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(2,385, '16000', '180', '70', '30');
+INSERT INTO PlayerBattingStats (player_id,matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(3,375, '12000', '129', '76', '20');
+INSERT INTO PlayerBattingStats (player_id,matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(4,325, '13000', '178', '68', '18');
+INSERT INTO PlayerBattingStats (player_id, matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(5,310,'5500', '60','3', '0');
+INSERT INTO PlayerBattingStats (player_id, matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(6,380,'12000', '170', '70','23');
+INSERT INTO PlayerBattingStats (player_id,matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(7,390,'11500', '182', '68','27');
+INSERT INTO PlayerBattingStats (player_id,matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(8,240, '9500', '130', '45', '21');
+INSERT INTO PlayerBattingStats (player_id, matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(9,400, '12700', '124', '59', '31');
+INSERT INTO PlayerBattingStats (player_id, matches, total_runs, highest_score, fiftys, hundreds)
+VALUES(10,390, '11800', '145', '69', '24');
+
+
+

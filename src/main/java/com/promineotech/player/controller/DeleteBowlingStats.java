@@ -2,34 +2,34 @@ package com.promineotech.player.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.promineotech.player.entity.PlayerBattingStats;
-import com.promineotech.player.entity.PlayerBowlingStats;
+import com.promineotech.player.entity.Players;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
-@RequestMapping("/updateBatting")
+@RequestMapping("/deleteplayerbowling")
 @Validated
-public interface PutBattingStats {
+public interface DeleteBowlingStats {
 	//@formatter:off
 		@Operation(
-				summary = "Service to update Player Batting Details",
-				description = "Service to update Player Batting Details",
+				summary = "Service to Delete Player Bowling Details",
+				description = "Service to Delete Player Bowling Details",
 				responses = {
 						@ApiResponse(
 								responseCode = "201",
-								description = "Playing batting details updated",
+								description = "Player Deleted Succesfully",
 								content = @Content(
 								mediaType = "application/json", 
-								schema=@Schema(implementation=PlayerBowlingStats.class))
+								schema=@Schema(implementation=PlayerBattingStats.class))
 								),
 						@ApiResponse(
 								responseCode="400",
@@ -47,13 +47,17 @@ public interface PutBattingStats {
 								description = "Service unavaiable",
 								content = @Content(
 								mediaType = "application/json "))
-				}
-
+				},
+				parameters = {
+						@Parameter(
+								name = "Player_name",
+								allowEmptyValue = false, 
+								required=false, 
+								description = "Player_name")
+				}	
 				)
 		//@formatter:on
-	
-	@PutMapping
-	@ResponseStatus(code=HttpStatus.ACCEPTED)
-	PlayerBattingStats updatePlayerBattingDetails(@RequestBody PlayerBattingStats players);
-	
+	@DeleteMapping
+	@ResponseStatus(HttpStatus.OK)
+	void deleteBowlingStats(@RequestParam String Player_name);
 }

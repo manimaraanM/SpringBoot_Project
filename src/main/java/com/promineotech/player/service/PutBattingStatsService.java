@@ -6,6 +6,6 @@ public interface PutBattingStatsService {
 
 	
 
-	PlayerBattingStats updatePlayerBattingDetailsService(PlayerBattingStats players);
+	PlayerBattingStats updatePlayerBattingDetailsService(int player_id, int matches,long total_runs,long highest_score,long fiftys,long hundreds);
 
 }

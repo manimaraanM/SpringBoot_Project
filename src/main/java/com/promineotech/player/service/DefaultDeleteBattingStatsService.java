@@ -14,9 +14,9 @@ public class DefaultDeleteBattingStatsService implements DeleteBattingStatsServi
 	@Autowired
 	private DeleteBattingStatDao deletebattingDao;
 	@Override
-	public void deletebattingStats(int player_id) {
+	public void deletebattingStats(String player_name) {
 		// TODO Auto-generated method stub
-		deletebattingDao.deleteBattingStats(player_id);
+		deletebattingDao.deleteBattingStats(player_name);
 	}
 
 }

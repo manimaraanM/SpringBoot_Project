@@ -30,13 +30,13 @@ private SqlParams insertStatementforPlayers(PlayerRole player_roles) {
 		
 		SqlParams params = new SqlParams();
 		params.sql=""
-				+ " INSERT INTO player_roles ("
-				+ " player_id, player_id ) "
-				+ " VALUES (:player_id,:role_id )";
+				+ " INSERT INTO player_role ("
+				+ " role_id, player_id ) "
+				+ " VALUES (:role_id,:player_id )";
 	
-		
-		params.source.addValue("player_id", player_roles.getPlayer_id());
 		params.source.addValue("role_id", player_roles.getRole_id());
+		params.source.addValue("player_id", player_roles.getPlayer_id());
+		
 		
 		
 		return params;
